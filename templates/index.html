@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <body>
+	<div class="login">
+		<h1>Predict GDP of the Country</h1>
+		
+		<form action="{{url_for("predict")}}" method="post">
+		<input type='text' name="population",placeholder="Population",required="required"/>
+		<input type="text" name="area_sqm",placeholder="Area_sqm",required="required"/>
+		<input type="text" name="pop_Density_per sqm",placeholder="Pop_Density_per sqm",required="required"/>
+		<input type="text" name="net migration",placeholder="Net migration",required="required"/>	
+		<input type="text" name="literacy (%)",placeholder="Literacy (%)",required="required"/>
+		
+		<button type="submit" class="btn btn-primary btn-block btn-large">predict</button>
+ 		</button>
+
+	<br>
+	<br>
+	{{ prediction_text }}
+	</div>
+   </body>
+</html>
