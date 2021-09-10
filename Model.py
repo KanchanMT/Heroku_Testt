@@ -1414,7 +1414,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 72,
+   "execution_count": 78,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1423,11 +1423,22 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 73,
+   "execution_count": 79,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "LinearRegression()"
+      ]
+     },
+     "execution_count": 79,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
    "source": [
-    "model=lin_reg.fit(X_train_sc,y_train)\n",
+    "lin_reg.fit(X_train_sc,y_train)\n",
     "# R2 and RMSE"
    ]
   },
@@ -1473,7 +1484,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 76,
+   "execution_count": 80,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1482,11 +1493,29 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 77,
+   "execution_count": 81,
    "metadata": {},
    "outputs": [],
    "source": [
     "pickle.dump(lin_reg,open('model.pkl','wb'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[-2969.48499099]\n"
+     ]
+    }
+   ],
+   "source": [
+    "model=pickle.load(open('model.pkl','rb'))\n",
+    "print(model.predict([[1435436,35345,45,32,89]]))"
    ]
   },
   {
