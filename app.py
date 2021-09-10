@@ -13,11 +13,12 @@ def predict():
     '''
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
+    print(final_features)
     prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='The GDP of the Country should be'.format(output))
+    return render_template('index.html', prediction_text='The GDP of the Country should be'.format(final_features))
 
 if __name__ == "__main__":
     app.run(debug=True)
