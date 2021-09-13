@@ -18,7 +18,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='The GDP of the Country should be'.format(final_features))
+    return render_template('index.html', prediction_text='The GDP of the Country should be $ {}'.format(final_features))
 
 if __name__ == "__main__":
     app.run(debug=True)
