@@ -18,7 +18,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='The GDP of the Country for Population {} , Area_sqm {}, Pop_Density per Sqm {}, Net Migration {} and Literacy {} ashould be $ {}'.format(final_features[0],final_features[1],final_features[2],final_features[3],final_features[4],output)
+    return render_template('index.html', prediction_text='The GDP of the Country for Population {} Area_sqm {} Pop_Density per Sqm {} Net Migration {} and Literacy {} should be $ {}'.format(final_features[0],final_features[1],final_features[2],final_features[3],final_features[4],output))
 
 if __name__ == "__main__":
     app.run(debug=True)
